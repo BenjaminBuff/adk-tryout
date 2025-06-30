@@ -4,10 +4,10 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.agent_tool import AgentTool
 
 from . import prompt
-from .sub_agents.current_destinations import current_destinations_agent
-from .sub_agents.trend_researcher import trend_researcher_agent
-from .sub_agents.trend_evaluator import trend_evaluator_agent
-from .sub_agents.trend_reasoning import trend_reasoning_agent
+from .sub_agents.current_destinations.agent import current_destinations_agent
+from .sub_agents.trend_researcher.agent import trend_researcher_agent
+from .sub_agents.trend_evaluator.agent import trend_evaluator_agent
+from .sub_agents.trend_reasoning.agent import trend_reasoning_agent
 
 MODEL = "gemini-2.5-pro"
 
