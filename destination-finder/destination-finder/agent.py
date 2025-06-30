@@ -12,13 +12,13 @@ from .sub_agents.trend_reasoning.agent import trend_reasoning_agent
 MODEL = "gemini-2.5-pro"
 
 
-academic_coordinator = LlmAgent(
+destination_finder = LlmAgent(
     name="destination_finder",
     model=MODEL,
     description=(
         "finding new trend travel destinations and evaluating if those would make sense to be added to the flight schedule of SWISS International Air Lines or Edelweiss Air."
     ),
-    instruction=prompt.ACADEMIC_COORDINATOR_PROMPT,
+    instruction=prompt.ROOT_AGENT_INSTR,
     output_key="destination_reasoning",
     tools=[
         AgentTool(agent=current_destinations_agent),

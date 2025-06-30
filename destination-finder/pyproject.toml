@@ -1,5 +1,5 @@
 [project]
-name = "academic_research"
+name = "destination_finder"
 version = "0.1"
 description = "AI-driven agent designed to facilitate the exploration of the academic landscape"
 authors = [{ name = "Antonio Gulli", email = "gulli@google.com" }]
