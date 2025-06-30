@@ -15,7 +15,7 @@
 """Prompt for the academic_newresearch_agent agent."""
 
 
-ACADEMIC_NEWRESEARCH_PROMPT = """
+trend_reasoning_PROMPT = """
 Role: You are an AI Research Foresight Agent.
 
 Inputs:
