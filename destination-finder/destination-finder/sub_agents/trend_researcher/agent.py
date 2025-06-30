@@ -1,4 +1,4 @@
-"""Academic_websearch_agent for finding research papers using search tools."""
+"""Trend_researcher_agent for finding new travel trend destinations in the internet."""
 
 from google.adk import Agent
 from google.adk.tools import google_search

@@ -16,11 +16,7 @@ academic_coordinator = LlmAgent(
     name="destination_finder",
     model=MODEL,
     description=(
-        "analyzing seminal papers provided by the users, "
-        "providing research advice, locating current papers "
-        "relevant to the seminal paper, generating suggestions "
-        "for new research directions, and accessing web resources "
-        "to acquire knowledge"
+        "finding new trend travel destinations and evaluating if those would make sense to be added to the flight schedule of SWISS International Air Lines or Edelweiss Air."
     ),
     instruction=prompt.ACADEMIC_COORDINATOR_PROMPT,
     output_key="destination_reasoning",
