@@ -10,5 +10,6 @@ MODEL = "gemini-2.5-pro"
 trend_reasoning_agent = Agent(
     model=MODEL,
     name="trend_reasoning_agent",
+    output_key="destination_reasoning",
     instruction=prompt.trend_reasoning_PROMPT,
 )
