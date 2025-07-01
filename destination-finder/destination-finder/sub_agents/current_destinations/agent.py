@@ -9,7 +9,7 @@ MODEL = "gemini-2.5-pro"
 
 current_destinations_agent = Agent(
     model=MODEL,
-    name="current-destinations-agent",
+    name="current_destinations_agent",
     instruction=prompt.CURRENT_DESTINATIONS_PROMPT,
     output_key="current_destinations",
     tools=[google_search],
