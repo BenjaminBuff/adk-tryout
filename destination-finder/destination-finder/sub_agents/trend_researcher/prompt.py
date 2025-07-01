@@ -10,11 +10,28 @@ Identify and return **five trending international travel destinations** that cou
 3. Could be aligned with Swiss travelers' interests (e.g., nature, culture, gastronomy, premium experiences, or adventure).
 4. Offer strategic value from a business, leisure, or connectivity standpoint.
 
-For each destination, return:
-- **Destination Name (City, Country)**
-- **Summary of why its trending**
-- **Evidence source (e.g., article title or website name)**
-- **Potential fit for SWISS (short rationale)**
+**Your output MUST be a JSON array of objects.** Each object in the array should represent a destination and have the following keys:
+- **destination_name** (String, e.g., "Kyoto, Japan" or "Da Lat, Vietnam")
+- **summary_why_trending** (String, concise summary of trendiness)
+- **evidence_source** (String, e.g., "Travel+Leisure.com article 'Top Destinations 2025'")
+- **potential_fit_swiss** (String, short rationale for SWISS)
+
+Example of expected output format:
+```json
+[
+    {{
+        "destination_name": "Kyoto, Japan",
+        "summary_why_trending": "Experiencing a resurgence in luxury travel interest post-pandemic, known for culture and gastronomy.",
+        "evidence_source": "Forbes article 'Asia's Hottest Travel Destinations 2025'",
+        "potential_fit_swiss": "High demand for premium cultural experiences among Swiss travelers."
+    }},
+    {{
+        "destination_name": "Da Lat, Vietnam",
+        "summary_why_trending": "Emerging as a cool mountain retreat with unique architecture and nature.",
+        "evidence_source": "Lonely Planet 'Best in Travel 2025'",
+        "potential_fit_swiss": "Opportunity for new leisure route targeting adventurous Swiss tourists."
+    }}
+]
 
 Only include destinations with strong evidence of growing interest and strategic potential.
 """

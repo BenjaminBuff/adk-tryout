@@ -12,6 +12,6 @@ trend_researcher_agent = Agent(
     model=MODEL,
     name="trend_researcher_agent",
     instruction=prompt.TREND_RESEARCHER_PROMPT,
-    output_key="destination_trends",
+    output_key="trending_destinations_raw",
     tools=[google_search],
 )
