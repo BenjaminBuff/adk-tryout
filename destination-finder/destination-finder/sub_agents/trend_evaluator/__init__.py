@@ -1,3 +1,3 @@
-"""Academic_websearch_agent for finding research papers using search tools."""
+"""Trend_evaluator_agent for finding new destinations"""
 
 from .agent import trend_evaluator_agent

@@ -19,7 +19,7 @@ import os
 
 import vertexai
 from absl import app, flags
-from academic_research.agent import root_agent
+from destination_finder.agent import root_agent
 from dotenv import load_dotenv
 from vertexai import agent_engines
 from vertexai.preview.reasoning_engines import AdkApp

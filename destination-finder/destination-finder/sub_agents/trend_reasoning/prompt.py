@@ -1,4 +1,4 @@
-"""Prompt for the academic_newresearch_agent agent."""
+"""Prompt for the trend_reasoning_agent agent."""
 
 
 trend_reasoning_PROMPT = """

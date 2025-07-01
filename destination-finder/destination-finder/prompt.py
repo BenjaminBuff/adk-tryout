@@ -28,10 +28,15 @@ You will perform the following steps sequentially and methodically. Your final o
 
 3.  **Destination Validation**:
     * Action: Initialize an empty list called `validated_destinations_list`.
-    * Action: For each destination object found in the JSON array output from `trend_researcher_tool`:
-        * Extract the `destination_name` from the current destination object.
-        * Invoke the `trend_evaluator_agent`, passing ONLY the `destination_name` to it.
-        * Capture the JSON object output from `trend_evaluator_agent`.
+    * Action: You will now process each `destination_object` from the JSON array you captured from the `trend_researcher_agent`'s output. For each `destination_object`:
+        * Extract the exact `destination_name` value from the current `destination_object` (e.g., by accessing `destination_object["destination_name"]`).
+        * **CRITICAL:** You must now call the `trend_evaluator_agent` tool. When you call it, you **MUST** use the exact named argument `destination_name` and pass the extracted value to it.
+        * **Your tool call for `trend_evaluator_agent` MUST look exactly like this, using the specific argument name `destination_name`:**
+          ```
+          tool_code.trend_evaluator_agent(destination_name='[THE_ACTUAL_EXTRACTED_DESTINATION_NAME_GOES_HERE]')
+          ```
+          (Replace `[THE_ACTUAL_EXTRACTED_DESTINATION_NAME_GOES_HERE]` with the actual `destination_name` you just extracted from the current `destination_object`.)
+        * Capture the JSON object output from the `trend_evaluator_agent`.
         * Add this validated destination JSON object to `validated_destinations_list`.
 
 4.  **Coverage Check via Swiss or Edelweiss**:

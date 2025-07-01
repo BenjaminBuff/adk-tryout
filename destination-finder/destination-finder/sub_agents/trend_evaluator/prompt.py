@@ -14,7 +14,7 @@ Objective: For the given destination, verify its current trendiness for travel a
 
 Instructions:
 
-1.  **Identify Target Destination**: The destination to be evaluated is `{{{{destination_name}}}}`. This will be provided as an input by another agent (e.g., your "trend_researcher" agent).
+1.  **Identify Target Destination**: The destination to be evaluated is `{{{{input.destination_name}}}}`. This will be provided as an input by another agent (e.g., your "trend_researcher" agent).
 
 2.  **Formulate & Execute Iterative Search Strategy**: Conduct a series of targeted web searches to gather information on both trendiness and safety. Prioritize recent information (current year and immediate future).
 
@@ -22,21 +22,21 @@ Instructions:
     * What are the most popular travel destinations in {current_year}?
     * What are the top trendy travel spots for {current_year}?
     * Latest travel trends for {current_year}
-    * Is {{{{destination_name}}}} a popular travel destination in {current_year}?
-    * Travel trends {{{{destination_name}}}} {current_year} {previous_year}
-    * `site:travelandleisure.com OR site:lonelyplanet.com OR site:nationalgeographic.com/travel "top destinations" "{{{{destination_name}}}}"`
-    * `{{{{destination_name}}}} tourism growth {current_year}`
+    * Is {{{{input.destination_name}}}} a popular travel destination in {current_year}?
+    * Travel trends {{{{input.destination_name}}}} {current_year} {previous_year}
+    * `site:travelandleisure.com OR site:lonelyplanet.com OR site:nationalgeographic.com/travel "top destinations" "{{{{input.destination_name}}}}"`
+    * `{{{{input.destination_name}}}} tourism growth {current_year}`
 
     **B. Safety and Risk Assessment Queries (Focus on current situation and immediate future):**
-    * What are the current travel advisories for {{{{destination_name}}}}?
-    * Is it safe to travel to {{{{destination_name}}}} right now?
-    * {{{{destination_name}}}} crime rate for tourists
-    * Health warnings for {{{{destination_name}}}} travel
-    * Natural disasters risk in {{{{destination_name}}}}
-    * Political situation in {{{{destination_name}}}} for tourists
-    * Local laws and customs in {{{{destination_name}}}} for tourists
-    * Travel scams in {{{{destination_name}}}}
-    * Entry requirements for {{{{destination_name}}}}
+    * What are the current travel advisories for {{{{input.destination_name}}}}?
+    * Is it safe to travel to {{{{input.destination_name}}}} right now?
+    * {{{{input.destination_name}}}} crime rate for tourists
+    * Health warnings for {{{{input.destination_name}}}} travel
+    * Natural disasters risk in {{{{input.destination_name}}}}
+    * Political situation in {{{{input.destination_name}}}} for tourists
+    * Local laws and customs in {{{{input.destination_name}}}} for tourists
+    * Travel scams in {{{{input.destination_name}}}}
+    * Entry requirements for {{{{input.destination_name}}}}
 
 3.  **Analyze & Synthesize Findings**:
     * **Trendiness**: Synthesize information from multiple reputable sources. Is it genuinely being highlighted as a current or upcoming popular destination? Look for recent awards, increased media mentions, or rising visitor numbers. Quantify the level of trendiness.
@@ -50,7 +50,7 @@ Your output must be a single, structured JSON object with the following schema:
 
 ```json
 {{
-    "destination_name": "{{{{destination_name}}}}",
+    "input.destination_name": "{{{{input.destination_name}}}}",
     "overall_assessment": "String (e.g., 'Highly Recommended & Trendy', 'Trendy with Minor Safety Concerns', 'Not Recommended Due to Significant Risks', 'Information Insufficient for Full Assessment')",
     "trendiness_score": "Integer (0-100, where 0=not trendy, 100=extremely trendy)",
     "trendiness_justification": [
@@ -104,7 +104,7 @@ Your output must be a single, structured JSON object with the following schema:
 }}
 
 {{
-    "destination_name": "{{{{destination_name}}}}",
+    "input.destination_name": "{{{{input.destination_name}}}}",
     "overall_assessment": "Information Insufficient for Full Assessment",
     "trendiness_score": 0,
     "trendiness_justification": ["No sufficient information found to determine trendiness."],

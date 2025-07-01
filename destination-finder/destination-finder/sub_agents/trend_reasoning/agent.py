@@ -1,5 +1,5 @@
 
-"""Academic_newresearch_agent for finding new research lines"""
+"""Trend_reasoning_agent for writing a reasoning about why this new destination(s) would make sense to look at for SWISS International Air Lines or Edelweiss Air."""
 
 from google.adk import Agent
 

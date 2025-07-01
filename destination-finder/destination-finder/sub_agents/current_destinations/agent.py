@@ -7,6 +7,7 @@ from . import prompt
 
 MODEL = "gemini-2.5-pro"
 
+
 current_destinations_agent = Agent(
     model=MODEL,
     name="current_destinations_agent",
